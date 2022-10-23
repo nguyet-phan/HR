@@ -1,0 +1,112 @@
+//Creat a user
+POST http://localhost:5000/users
+Content-Type: application/json
+
+{
+    "name": "Phan Thị Nguyệt", 
+    "personId": "026300005746", 
+    "phoneNumber": "0986482418", 
+    "phoneNumberRelative": "0339394905", 
+    "address": "Hanoi", 
+    "birthday": "2000-07-23", 
+    "idManager": "1", 
+    "email": "nguyetphan2307@gmail.com", 
+    "password": "123456", 
+    "confPassword": "123456",
+    "role": "Software Developer"
+}
+
+###
+//Get All Users
+GET http://localhost:5000/users
+
+###
+//Get a user
+GET http://localhost:5000/users/1eab4579-a28f-490e-8ca5-962c918c006e
+
+###
+//Update a user
+PATCH http://localhost:5000/users/1eab4579-a28f-490e-8ca5-962c918c006e
+Content-Type: application/json
+
+{
+    "name": "Phan Thị Nguyệt Updated", 
+    "personId": "026300005746", 
+    "phoneNumber": "0986482418", 
+    "phoneNumberRelative": "0339394905", 
+    "address": "Hanoi", 
+    "birthday": "2000-07-23", 
+    "idManager": "1", 
+    "email": "nguyetphan2307@gmail.com", 
+    "password": "123456", 
+    "confPassword": "123456",
+    "role": "Software Developer"
+}
+
+###
+DELETE http://localhost:5000/users/04052263-22a4-447e-8b49-12685869f407
+
+###
+//Login as admin
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{ 
+    "email": "admin@gmail.com", 
+    "password": "123456"
+}
+
+###
+//Login as a user
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{ 
+    "email": "nguyetphan2307@gmail.com", 
+    "password": "123456"
+}
+
+###
+//Me
+GET http://localhost:5000/me
+
+### 
+//LogOut
+DELETE http://localhost:5000/logout
+
+
+###
+//Get All LeaveLetter
+GET http://localhost:5000/leaveLetters
+
+###
+//Get A LeaveLetter
+GET http://localhost:5000/leaveLetters/758a880c-935e-4f58-9b04-0dece8c88f1e
+
+###
+// Creat a LeaveLetter
+POST http://localhost:5000/leaveLetters
+Content-Type: application/json
+
+{ 
+    "startDay": "2022-10-16",
+    "endDay": "2022-10-16",
+    "reason": "Nghỉ phép 2",
+    "quantity_day": 0.5
+}
+
+###
+// Update a LeaveLetter
+PATCH  http://localhost:5000/leaveLetters/cea8821d-d8f8-4b4f-bc77-55aec74975e9
+Content-Type: application/json
+
+{ 
+    "startDay": "2022-10-16",
+    "endDay": "2022-10-17",
+    "reason": "Nghỉ phép 2 Update",
+    "quantity_day": 1
+}
+
+###
+//Delete a LeaveLetter
+DELETE http://localhost:5000/leaveLetters/758a880c-935e-4f58-9b04-0dece8c88f1e
